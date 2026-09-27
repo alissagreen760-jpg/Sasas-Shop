@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sasa's Shop · thrifted, vintage & Y2K clothing</title>
+<meta name="description" content="One-of-a-kind thrifted, vintage and Y2K clothing, hand-picked by Sasa. New pieces every week.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌼</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Gochi+Hand&family=Shantell+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+
+<style>
+:root{
+  --paper:#FFF6DC; --line:#F0DDB0; --ink:#3B2314;
+  --maroon:#7A1631; --caramel:#C47A2C; --neon:#39FF14; --mustard:#F2B705; --wine:#9E2A44; --brown:#8B5A2B;
+  --card:#FFFBEF; --muted:#7A5A40;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --paper:#24160D; --line:#3A2718; --ink:#FFF1D6; --card:#33200F; --muted:#D9BE98; }
+}
+:root[data-theme="dark"]{ --paper:#24160D; --line:#3A2718; --ink:#FFF1D6; --card:#33200F; --muted:#D9BE98; }
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); background-color:var(--paper);
+  background-image:linear-gradient(var(--line) 1px, transparent 1px); background-size:100% 32px;
+  font-family:"Shantell Sans","Comic Sans MS","Chalkboard SE",system-ui,sans-serif; font-size:1rem; line-height:1.6;
+}
+a{color:inherit}
+img{max-width:100%; display:block}
+button{font:inherit; color:inherit}
+:focus-visible{outline:3px dashed var(--maroon); outline-offset:3px}
+
+.ticker{background:var(--ink); color:var(--paper); overflow:hidden; white-space:nowrap; font-family:"Gochi Hand",cursive; font-size:1.1rem}
+.ticker span{display:inline-block; padding:.35rem 0; animation:scroll 26s linear infinite}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+header.nav{position:sticky; top:0; z-index:5; background:var(--paper); border-bottom:2px solid var(--ink)}
+.nav-in{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem 1.25rem; max-width:1200px; margin:0 auto}
+.logo-small{font-family:"Bagel Fat One",system-ui,sans-serif; font-size:1.5rem; color:var(--maroon); text-decoration:none; -webkit-text-stroke:1px var(--ink)}
+nav ul{display:flex; gap:1.1rem; list-style:none; margin:0; padding:0; font-weight:600}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline wavy var(--maroon)}
+.bag{display:inline-flex; align-items:center; gap:.4rem; border:2px solid var(--ink); border-radius:999px; padding:.3rem .9rem; background:var(--mustard); color:#3B2314; font-weight:800; cursor:pointer}
+@media (max-width:700px){ nav ul{display:none} }
+
+.hero{position:relative; max-width:1100px; margin:0 auto; padding:2.5rem 1.25rem 3rem; text-align:center}
+.hero h1{font-family:"Bagel Fat One",system-ui,sans-serif; font-weight:400; font-size:clamp(3.2rem,17vw,8.5rem); line-height:.9; margin:.2em 0 .15em;
+  color:var(--maroon); -webkit-text-stroke:3px var(--ink); text-shadow:6px 6px 0 var(--mustard),12px 12px 0 var(--neon); transform:rotate(-3deg); display:inline-block}
+.hero .tag{font-family:"Gochi Hand",cursive; font-size:clamp(1.3rem,4vw,1.9rem); margin:.6rem auto 1.5rem; max-width:32ch}
+.note{position:absolute; font-family:"Gochi Hand",cursive; font-size:1.25rem; color:var(--wine); line-height:1.1}
+.note-a{right:6%; top:1.2rem; transform:rotate(8deg); text-align:left}
+.doodle{position:absolute; pointer-events:none}
+.d1{left:5%; top:1.5rem; width:70px; color:var(--mustard)}
+.d2{right:10%; bottom:3rem; width:56px; color:var(--maroon)}
+.d3{left:12%; bottom:3.5rem; width:90px; color:var(--caramel)}
+@media (max-width:640px){ .note-a,.d3{display:none} .d1{width:44px} .d2{width:40px} }
+@media (prefers-reduced-motion:no-preference){
+  .hero h1{animation:pop .7s cubic-bezier(.2,1.6,.4,1) both}
+  @keyframes pop{from{transform:rotate(-3deg) scale(.6);opacity:0}to{transform:rotate(-3deg) scale(1);opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){ .ticker span{animation:none} html{scroll-behavior:auto} }
+
+.btn{display:inline-block; font-weight:800; font-size:1.05rem; text-decoration:none; cursor:pointer;
+  background:var(--neon); color:#3B2314; border:3px solid var(--ink); border-radius:18px 6px 20px 8px; padding:.65rem 1.5rem; box-shadow:5px 5px 0 var(--ink)}
+.btn:hover{transform:translate(2px,2px); box-shadow:3px 3px 0 var(--ink)}
+.btn[disabled]{background:#d8c9a8; cursor:not-allowed; transform:none; box-shadow:5px 5px 0 var(--ink)}
+
+.shop{max-width:1200px; margin:0 auto; padding:0 1.25rem 3rem}
+.shop h2{font-family:"Bagel Fat One",system-ui,sans-serif; font-weight:400; font-size:clamp(2rem,6vw,3rem); margin:0; color:var(--caramel); -webkit-text-stroke:1.5px var(--ink)}
+.shop .sub{font-family:"Gochi Hand",cursive; font-size:1.3rem; margin:0 0 1.2rem; color:var(--muted)}
+.chips{display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1rem}
+.chip{font-weight:600; padding:.4rem .95rem; border:2px solid var(--ink); border-radius:999px; background:var(--card); cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--maroon); color:#fff}
+.chip:nth-child(odd){transform:rotate(-1.5deg)} .chip:nth-child(even){transform:rotate(1.2deg)}
+.tools{display:flex; flex-wrap:wrap; gap:.7rem; align-items:center; margin-bottom:1.8rem}
+.tools input,.tools select{font:inherit; color:var(--ink); background:var(--card); border:2px solid var(--ink); border-radius:12px; padding:.45rem .8rem}
+.tools input{flex:1 1 220px; min-width:0}
+.count{font-family:"Gochi Hand",cursive; font-size:1.2rem; color:var(--muted)}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:2rem 1.4rem}
+.item{position:relative; background:var(--card); border:2px solid var(--ink); padding:.6rem .6rem .9rem; text-align:left; cursor:pointer; width:100%}
+.item:nth-child(odd){transform:rotate(-1deg)} .item:nth-child(even){transform:rotate(.9deg)}
+.item:hover{transform:rotate(0) translateY(-3px)}
+.item::before{content:""; position:absolute; top:-12px; left:50%; width:78px; height:24px; transform:translateX(-50%) rotate(-4deg); background:var(--tape); opacity:.85; z-index:1}
+.pic{aspect-ratio:1; background:#fff; border:2px solid var(--ink); overflow:hidden}
+.pic img{width:100%; height:100%; object-fit:cover}
+.item h3{font-size:.95rem; font-weight:600; margin:.6rem 0 .1rem; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.meta{display:flex; justify-content:space-between; align-items:baseline; gap:.5rem}
+.cond{font-size:.8rem; color:var(--muted)}
+.price{font-family:"Gochi Hand",cursive; font-size:1.5rem; color:var(--maroon)}
+.badge{position:absolute; right:-10px; top:22px; z-index:2; background:var(--wine); color:#fff; font-family:"Gochi Hand",cursive; font-size:1rem; padding:.05rem .6rem; border-radius:999px; transform:rotate(12deg); border:2px solid var(--ink)}
+.item.sold .pic img{filter:grayscale(1) opacity(.6)}
+.item.sold .badge{background:var(--ink); color:var(--paper)}
+.more{text-align:center; margin-top:2.5rem}
+.empty{font-family:"Gochi Hand",cursive; font-size:1.4rem; text-align:center; padding:2rem 0}
+
+dialog{border:3px solid var(--ink); border-radius:24px 8px 26px 10px; padding:0; max-width:880px; width:calc(100% - 2rem); background:var(--card); color:var(--ink); box-shadow:10px 10px 0 var(--maroon)}
+dialog::backdrop{background:rgba(59,35,20,.55)}
+.dlg{display:grid; grid-template-columns:1fr 1fr; max-height:85vh}
+.dlg .pic{border:0; border-right:2px solid var(--ink); aspect-ratio:auto}
+.dlg .info{padding:1.4rem 1.4rem 1.6rem; overflow:auto}
+.dlg h3{font-size:1.3rem; line-height:1.3; margin:0 2rem .3rem 0}
+.dlg .brand{font-weight:800; color:var(--caramel)}
+.dlg .row{display:flex; align-items:center; gap:1rem; margin:.6rem 0 1rem; flex-wrap:wrap}
+.dlg .price{font-size:2.2rem}
+.pill{border:2px solid var(--ink); border-radius:999px; padding:.1rem .7rem; font-size:.85rem; background:var(--mustard); color:#3B2314}
+.desc{font-size:.95rem; max-width:60ch}
+.desc p{margin:.5rem 0}
+.close{position:absolute; top:.6rem; right:.7rem; width:2.4rem; height:2.4rem; border-radius:50%; border:2px solid var(--ink); background:var(--neon); color:#3B2314; font-weight:800; cursor:pointer; z-index:2}
+.hint{font-size:.85rem; color:var(--muted); margin-top:.6rem}
+@media (max-width:700px){ .dlg{grid-template-columns:1fr} .dlg .pic{border-right:0; border-bottom:2px solid var(--ink); max-height:45vh} }
+
+.about{max-width:760px; margin:0 auto 3rem; padding:1.6rem 1.5rem; background:var(--mustard); color:#3B2314; border:3px solid var(--ink); border-radius:28px 10px 30px 12px; box-shadow:8px 8px 0 var(--maroon); transform:rotate(-.8deg)}
+.about h2{font-family:"Bagel Fat One",system-ui,sans-serif; font-weight:400; font-size:2rem; margin:0 0 .4rem}
+.about p{margin:.3rem 0; max-width:60ch}
+footer{background:var(--ink); color:var(--paper); padding:2rem 1.25rem calc(2rem + env(safe-area-inset-bottom,0px)); text-align:center}
+footer .logo-small{color:var(--neon); -webkit-text-stroke:0}
+footer p{margin:.4rem 0}
+.shops{display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem; margin:.8rem 0 .4rem}
+.shop-link{font-weight:800; text-decoration:none; padding:.4rem 1.1rem; border:2px solid var(--paper); border-radius:999px; color:#3B2314}
+.shop-link:nth-child(1){background:var(--neon); transform:rotate(-2deg)}
+.shop-link:nth-child(2){background:var(--mustard); transform:rotate(1.5deg)}
+.shop-link:nth-child(3){background:var(--caramel); transform:rotate(-1deg)}
+.shop-link:hover{transform:rotate(0) scale(1.05)}
+.about a{font-weight:800; text-decoration:underline wavy var(--maroon)}
+footer .also{font-family:"Gochi Hand",cursive; font-size:1.25rem}
+.bagdlg{max-width:440px; margin-right:0; margin-top:0; height:100%; max-height:100%; border-radius:24px 0 0 24px; padding:1.4rem 1.2rem calc(1.4rem + env(safe-area-inset-bottom,0px))}
+.bagdlg h2{font-family:"Bagel Fat One",system-ui,sans-serif; font-weight:400; font-size:2rem; margin:0 0 1rem; color:var(--maroon)}
+.baglist{list-style:none; margin:0; padding:0; display:grid; gap:.9rem}
+.baglist li{display:grid; grid-template-columns:64px 1fr auto; gap:.7rem; align-items:center; border-bottom:2px dashed var(--line); padding-bottom:.8rem}
+.baglist img{width:64px; height:64px; object-fit:cover; border:2px solid var(--ink)}
+.baglist .t{font-size:.9rem; line-height:1.3}
+.baglist .p{font-family:"Gochi Hand",cursive; font-size:1.3rem; color:var(--maroon)}
+.rm{background:none; border:0; text-decoration:underline; cursor:pointer; font-size:.8rem; color:var(--muted); padding:0}
+.bagrow{display:flex; justify-content:space-between; font-size:1.15rem; margin:1.2rem 0 .3rem}
+.bagempty{font-family:"Gochi Hand",cursive; font-size:1.3rem}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true"><span>✿ new drops every week ✿ one-of-a-kind pieces ✿ bundle 2+ items & save ✿ hand-picked by Sasa ✿ new drops every week ✿ one-of-a-kind pieces ✿ bundle 2+ items & save ✿ hand-picked by Sasa&nbsp;</span></div>
+
+<header class="nav"><div class="nav-in">
+  <a class="logo-small" href="#top">Sasa's Shop</a>
+  <nav aria-label="Main"><ul>
+    <li><a href="#shop" data-go="New in">New in</a></li>
+    <li><a href="#shop" data-go="Dresses">Dresses</a></li>
+    <li><a href="#shop" data-go="Under $25">Under $25</a></li>
+    <li><a href="#about">About</a></li>
+  </ul></nav>
+  <button class="bag" type="button" id="bagBtn" aria-label="Open bag">Bag (<span id="bagCount">0</span>)</button>
+</div></header>
+
+<section class="hero" id="top">
+  <svg class="doodle d1" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 5 61 38 96 38 68 59 79 93 50 72 21 93 32 59 4 38 39 38Z" fill="currentColor" stroke="#3B2314" stroke-width="4" stroke-linejoin="round"/></svg>
+  <svg class="doodle d2" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 85C20 62 5 45 5 27 5 13 16 4 28 4c10 0 17 6 22 14C55 10 62 4 72 4c12 0 23 9 23 23 0 18-15 35-45 58Z" fill="currentColor" stroke="#3B2314" stroke-width="5"/></svg>
+  <svg class="doodle d3" viewBox="0 0 120 30" aria-hidden="true"><path d="M3 15c10-14 18 14 28 0s18 14 28 0 18 14 28 0 18 14 28 0" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
+  <p class="note note-a">all pre-loved<br>+ one of one!!</p>
+  <h1>Sasa's<br>Shop</h1>
+  <p class="tag">thrifted, vintage & Y2K finds, hand-picked and ready for their next closet</p>
+  <a class="btn" href="#shop">Shop the racks</a>
+</section>
+
+<section class="shop" id="shop">
+  <h2>the racks</h2>
+  <p class="sub">once it's gone, it's gone ♡</p>
+  <div class="chips" id="chips" role="group" aria-label="Filter by section"></div>
+  <div class="tools">
+    <label class="sr" style="position:absolute;left:-9999px" for="q">Search</label>
+    <input id="q" type="search" placeholder="Search: denim, Y2K, maroon, size S…">
+    <label style="position:absolute;left:-9999px" for="sort">Sort</label>
+    <select id="sort">
+      <option value="new">Newest first</option>
+      <option value="low">Price: low to high</option>
+      <option value="high">Price: high to low</option>
+    </select>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>Nothing matches that yet. Try another search!</p>
+  <div class="more"><button class="btn" id="moreBtn" type="button" hidden>Show more pieces</button></div>
+</section>
+
+<section class="about" id="about">
+  <h2>hi, I'm Sasa!</h2>
+  <p>Every piece here is thrifted and hand-picked by me, then cleaned, measured, and photographed before it's listed. Everything's one of a kind, so if you love it, grab it.</p>
+  <p>You can also shop my closet on <a href="https://www.depop.com/sasas_shop/" target="_blank" rel="noopener">Depop</a> and <a href="https://poshmark.com/closet/alissag5204" target="_blank" rel="noopener">Poshmark</a>.</p>
+</section>
+
+<footer>
+  <a class="logo-small" href="#top">Sasa's Shop</a>
+  <p class="also">also find me on ✿</p>
+  <div class="shops">
+    <a class="shop-link" href="https://www.depop.com/sasas_shop/" target="_blank" rel="noopener">Depop</a>
+    <a class="shop-link" href="https://poshmark.com/closet/alissag5204" target="_blank" rel="noopener">Poshmark</a>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dTitle">
+  <button class="close" type="button" id="dClose" aria-label="Close">✕</button>
+  <div class="dlg">
+    <div class="pic"><img id="dImg" alt=""></div>
+    <div class="info">
+      <div class="brand" id="dBrand"></div>
+      <h3 id="dTitle"></h3>
+      <div class="row"><span class="price" id="dPrice"></span><span class="pill" id="dCond"></span></div>
+      <button class="btn" type="button" id="dAdd">Add to bag</button>
+      <p class="hint" id="dHint"></p>
+      <div class="desc" id="dDesc"></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="bag" class="bagdlg" aria-labelledby="bagTitle">
+  <button class="close" type="button" id="bagClose" aria-label="Close bag">✕</button>
+  <h2 id="bagTitle">your bag</h2>
+  <ul class="baglist" id="bagList"></ul>
+  <p class="bagempty" id="bagEmpty">Your bag is empty. Go find something cute!</p>
+  <div class="bagfoot" id="bagFoot">
+    <div class="bagrow"><span>Subtotal</span><strong id="bagSub"></strong></div>
+    <p class="hint" id="shipNote"></p>
+    <button class="btn" type="button" id="checkoutBtn" style="width:100%">Checkout</button>
+    <p class="hint" id="bagErr" role="alert"></p>
+  </div>
+</dialog>
+
+<script src="products.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>
